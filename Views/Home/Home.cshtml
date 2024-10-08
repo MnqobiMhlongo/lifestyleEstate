@@ -88,7 +88,7 @@
                         <div class="icon mb-3">
 
                         </div>
-                        <img class="img-fluid" src="~/img/hotel.png"  alt="Icon">
+                        <img class="img-fluid" src="~/img/hotel.png" alt="Icon">
                         <h6>Hotels</h6>
 
                     </div>
@@ -236,18 +236,18 @@
                 </div>
             </div>
             <!----<div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
-        <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
-            <li class="nav-item me-2">
-                <a class="btn btn-outline-primary active" data-bs-toggle="pill" href="#tab-1">Featured</a>
-            </li>
-            <li class="nav-item me-2">
-                <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#tab-2">For Sell</a>
-            </li>
-            <li class="nav-item me-0">
-                <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#tab-3">For Rent</a>
-            </li>
-        </ul>
-    </div>-->
+                <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
+                    <li class="nav-item me-2">
+                        <a class="btn btn-outline-primary active" data-bs-toggle="pill" href="#tab-1">Featured</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#tab-2">For Sell</a>
+                    </li>
+                    <li class="nav-item me-0">
+                        <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#tab-3">For Rent</a>
+                    </li>
+                </ul>
+            </div>-->
         </div>
         <div class="tab-content">
             <div id="tab-1" class="tab-pane fade show p-0 active">
@@ -624,21 +624,36 @@
             <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                        <img class="img-fluid rounded w-100" src="~/img/img244.jpg" alt="">
+                        <img class="img-fluid rounded w-100" src="~/img/img244.jpg" alt="Agent">
                     </div>
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                         <div class="mb-4">
-                            <h1 class="mb-3">Connect with Our Certified Agent</h1>
-                            <p>Your path to expert assistance starts here. Contact us for any inquiries or to schedule your consultation.</p>
+                            <h1 class="mb-3">Contact Our Certified Agent</h1>
+                            <p>Reach out to us with any inquiries or schedule a consultation by filling out the form below.</p>
                         </div>
-                        <div class="button-group">
-                            <a href="#" class="btn btn-primary py-3 px-4 me-2">
-                                <i class="fa fa-phone-alt me-2"></i>Call Us
-                            </a>
-                            <a href="#" class="btn btn-dark py-3 px-4">
-                                <i class="fa fa-calendar-alt me-2"></i>Book Appointment
-                            </a>
-                        </div>
+                        <form action="/Contact/SendEmail" method="POST">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Your Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
+                            </div>
+                            <div class="button-group">
+                                <button type="submit" class="btn btn-primary py-3 px-4 me-2">
+                                    <i class="fa fa-envelope me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
