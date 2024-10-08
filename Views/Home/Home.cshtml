@@ -631,7 +631,7 @@
                             <h1 class="mb-3">Contact Our Certified Agent</h1>
                             <p>Reach out to us with any inquiries or schedule a consultation by filling out the form below.</p>
                         </div>
-                        <form action="/Contact/SendEmail" method="POST">
+                        <form action="/Home/SendEmail" method="POST">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Your Name</label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
@@ -785,3 +785,28 @@
     </div>
 </div>
 <!-- Testimonial End -->
+
+@section scripts{
+    <!-- Toastr CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+
+    <!-- Toastr JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <script>
+        // Define the showSuccessMessage function
+        function showSuccessMessage(message) {
+            toastr.success(message);
+        }
+
+        // Handle the Toastr notification.
+        $(document).ready(function () {
+            // Check if a success message exists in the query string (added after redirection).
+            var urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has("successMessage")) {
+                var successMessage = urlParams.get("successMessage");
+                showSuccessMessage(successMessage);
+            }
+        });
+    </script>
+}
