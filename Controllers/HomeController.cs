@@ -34,6 +34,13 @@ namespace lifestyleEstate.Controllers
             return View();
         }
 
+        public ActionResult ViewPdf(string fileName)
+        {
+            string filePath = Server.MapPath("~/Content/PDFs/" + fileName);
+            byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
+            return File(fileBytes, "application/pdf");
+        }
+
 
 
         [HttpPost]
